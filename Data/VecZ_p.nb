@@ -1,0 +1,156 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5218,        148]
+NotebookOptionsPosition[      4743,        132]
+NotebookOutlinePosition[      5173,        149]
+CellTagsIndexPosition[      5130,        146]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"written", " ", "by", " ", "Shawn", " ", "Cui"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.9107411571348467`*^9, 
+  3.9107411661027813`*^9}},ExpressionUUID->"5d2e3e6a-f03e-4015-af28-\
+772d90a0f19a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"data", " ", "for", " ", "Vec_", 
+    RowBox[{"{", "Z_p", "}"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"NumObj", " ", "=", " ", "p"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"FusionMatrix", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"i", "-", "1", "+", "j", "-", "1", "-", 
+             RowBox[{"(", 
+              RowBox[{"k", "-", "1"}], ")"}]}], ",", "p"}], "]"}], "\[Equal]",
+           "0"}], ",", "1", ",", "0"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "NumObj"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "1", ",", "NumObj"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "NumObj"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"FMatrixElem", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"i", "+", "j", "+", "k"}], ",", "p"}], "]"}], "\[Equal]",
+            "l"}], " ", "&&", " ", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"j", "+", "k"}], ",", "p"}], "]"}], " ", "\[Equal]", " ",
+            "m"}], " ", "&&", " ", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"i", "+", "j"}], ",", "p"}], "]"}], "\[Equal]", "n"}]}], 
+         ",", " ", "1", ",", "0"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"l", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"m", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "0", ",", 
+         RowBox[{"NumObj", " ", "-", "1"}]}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"RMatrixElem", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"i", "-", "1", "+", "j", "-", "1", "-", 
+             RowBox[{"(", 
+              RowBox[{"k", "-", "1"}], ")"}]}], ",", "p"}], "]"}], "\[Equal]",
+           "0"}], ",", "1", ",", "0"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "NumObj"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "1", ",", "NumObj"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "NumObj"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.738577557354582*^9, 3.7385775897476788`*^9}, {
+   3.7391412418273125`*^9, 3.7391412446265945`*^9}, {3.8139886291467104`*^9, 
+   3.8139886296717405`*^9}, {3.8453024539172087`*^9, 
+   3.8453024546822524`*^9}, {3.867957733491599*^9, 3.867957734322647*^9}, 
+   3.8685415625301027`*^9, {3.9107415948462076`*^9, 3.91074161127821*^9}, {
+   3.9107422916109343`*^9, 3.910742292586275*^9}, 3.9107425300272026`*^9, {
+   3.910743168975213*^9, 
+   3.910743170007921*^9}},ExpressionUUID->"c75a181a-d6ea-4321-9da3-\
+19a724677d41"]
+},
+WindowSize->{1269, 721},
+WindowMargins->{{12, Automatic}, {Automatic, 4.5}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"83a9c100-f314-4b46-9c6b-086adefa63ba"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 287, 7, 52, "Input",ExpressionUUID->"5d2e3e6a-f03e-4015-af28-772d90a0f19a"],
+Cell[848, 29, 3891, 101, 262, "Input",ExpressionUUID->"c75a181a-d6ea-4321-9da3-19a724677d41"]
+}
+]
+*)
+
