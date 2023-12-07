@@ -10,38 +10,64 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     35796,        895]
-NotebookOptionsPosition[     35388,        880]
-NotebookOutlinePosition[     35747,        896]
-CellTagsIndexPosition[     35704,        893]
+NotebookDataLength[     39100,        968]
+NotebookOptionsPosition[     38648,        953]
+NotebookOutlinePosition[     39049,        969]
+CellTagsIndexPosition[     39006,        966]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"READ", " ", "ME"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
+  RowBox[{"(*", " ", 
+   RowBox[{"written", " ", "by", " ", "Shawn", " ", "Cui"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
    RowBox[{
+   "defines", " ", "functions", " ", "for", " ", "creating", " ", "and", " ", 
+    "operating", " ", "on", " ", "morphisms", " ", "in", " ", "semisimple", 
+    " ", "categories"}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Requirements", ":", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"-", " ", "global"}], " ", "variable", " ", "NumObj"}]}], ",", 
+    " ", 
     RowBox[{
-    "Requires", " ", "the", " ", "global", " ", "variable", " ", "NumObj"}], 
-    ",", " ", 
-    RowBox[{
-    "which", " ", "is", " ", "the", " ", "number", " ", "of", " ", "simple", 
-     " ", 
-     RowBox[{"objects", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.7376892260622077`*^9, 
-  3.7376892687599792`*^9}},ExpressionUUID->"bee72afb-a107-4432-9a64-\
+    "the", " ", "number", " ", "of", " ", "simple", " ", "objects"}]}], " ", 
+   "*)"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7376892260622077`*^9, 3.7376892687599792`*^9}, {
+  3.9109177821249127`*^9, 3.9109177887269573`*^9}, {3.9109179761821823`*^9, 
+  3.9109179905725355`*^9}, {3.910918556299362*^9, 
+  3.910918660276965*^9}},ExpressionUUID->"bee72afb-a107-4432-9a64-\
 c086f3c6cf7f"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(*", 
+  RowBox[{"(*", " ", 
    RowBox[{
-   "create", " ", "the", " ", "identity", " ", "morphism", " ", "on", " ", 
-    "an", " ", "object"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Input", ":", " ", "obj"}], ",", " ", 
+    RowBox[{
+    "an", " ", "object", " ", "given", " ", "as", " ", "a", " ", "list", " ", 
+     "of", " ", "coefficients", " ", "of", " ", "simples"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Output", ":", " ", 
+     RowBox[{
+     "the", " ", "identity", " ", "morphism", " ", "on", " ", "obj"}]}], ",", 
+    " ", 
+    RowBox[{"a", " ", "list", " ", 
+     RowBox[{"{", 
+      RowBox[{"id_obj", ",", "obj", ",", "obj"}], "}"}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "this", " ", "is", " ", "an", " ", "identity", " ", "matrix", " ", "for", 
+    " ", "each", " ", "nonzero", " ", "entry", " ", "of", " ", "obj"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{
@@ -62,10 +88,26 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"i", ",", "1", ",", "NumObj"}], "}"}]}], "]"}], ",", "obj", 
        ",", "obj"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
     RowBox[{
-    "create", " ", "zero", " ", "morphism", " ", "between", " ", "two", " ", 
-     "objects"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Input", ":", " ", "obj1"}], ",", " ", "obj2", ",", " ", 
+     RowBox[{"two", " ", "objects"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "the", " ", "zero", " ", "morphism", " ", "from", " ", "obj1", " ", 
+       "to", " ", "obj2"}]}], ",", " ", 
+     RowBox[{"a", " ", "list", " ", 
+      RowBox[{"{", 
+       RowBox[{"zero", ",", "obj1", ",", "obj2"}], "}"}]}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "this", " ", "is", " ", "a", " ", "zero", " ", "matrix", " ", "wherever", 
+     " ", "obj1", " ", "and", " ", "obj2", " ", "are", " ", "both", " ", 
+     "nonzero"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ZeroMor", "[", 
@@ -97,6 +139,22 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"i", ",", "1", ",", "NumObj"}], "}"}]}], "]"}], ",", "obj1",
         ",", "obj2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Input", ":", " ", "mor1"}], ",", " ", "mor2", ",", " ", 
+     RowBox[{"two", " ", "morphisms"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Output", ":", " ", 
+     RowBox[{"the", " ", "composition", " ", 
+      RowBox[{"mor1", " ", "\\", "circ"}], " ", "mor2"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
+     RowBox[{
+     "the", " ", "order", " ", "of", " ", "inputs", " ", "is", " ", 
+      "opposite", " ", "the", " ", "order", " ", "of", " ", "functions"}]}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"TwoMorCompose", "[", 
@@ -149,23 +207,27 @@ Cell[BoxData[
        RowBox[{"mor2", "[", 
         RowBox[{"[", "2", "]"}], "]"}], ",", 
        RowBox[{"mor1", "[", 
-        RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+        RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
     RowBox[{
+     RowBox[{"Input", ":", " ", 
+      RowBox[{"arbitrarily", " ", "many", " ", "morphisms"}]}], ",", " ", 
+     RowBox[{"at", " ", "least", " ", "two"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Output", ":", " ", 
      RowBox[{
-     "Composition", " ", "of", " ", "morphisms", " ", "from", " ", "right", 
-      " ", "to", " ", 
-      RowBox[{"left", ".", " ", "Note"}], " ", "that", " ", "there", " ", 
-      "can", " ", "be", " ", "ARBETRARY", " ", "number", " ", "of", " ", 
-      "parameters", " ", 
-      RowBox[{"(", 
-       RowBox[{"at", " ", "least", " ", "two"}], ")"}]}], ",", " ", 
-     RowBox[{"eg", "."}], ",", " ", 
+      RowBox[{"the", " ", "composition", " ", 
+       RowBox[{"mor1", " ", "\\", "circ"}], " ", 
+       RowBox[{"mor2", " ", "\\", "circ"}]}], " ", "..."}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
      RowBox[{
-      RowBox[{"MorCompose", "[", 
-       RowBox[{"mor1", ",", "mor2", ",", "mor3", ",", "mor4"}], "]"}], 
-      "."}]}], "   ", "*)"}], "\n", 
+     "the", " ", "order", " ", "of", " ", "inputs", " ", "is", " ", 
+      "opposite", " ", "the", " ", "order", " ", "of", " ", "functions"}]}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"MorCompose", "[", 
@@ -182,24 +244,31 @@ Cell[BoxData[
          RowBox[{"TwoMorCompose", "[", 
           RowBox[{"mor1", ",", "mor2"}], "]"}], ",", "mor"}], "]"}]}], 
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Input", ":", " ", "obj1"}], ",", " ", "obj2", ",", " ", 
+     "list"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{"a", " ", "morphism", " ", "obj1"}]}], " ", "->", " ", "obj2"}],
+     " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
     RowBox[{
      RowBox[{
-     "list_", " ", "is", " ", "a", " ", "list", " ", "whose", " ", "entries", 
+     "list", " ", "is", " ", "a", " ", "list", " ", "whose", " ", "entries", 
       " ", "are", " ", "of", " ", "the", " ", "form", " ", 
       RowBox[{"{", 
-       RowBox[{"i", ",", " ", "ma"}], "}"}]}], ",", " ", 
+       RowBox[{"i", ",", "ma"}], "}"}]}], ",", 
      RowBox[{
-      RowBox[{"where", " ", "1"}], " ", "\[LessEqual]", " ", "i", " ", 
-      "\[LessEqual]", " ", "NumObj"}], ",", " ", 
+      RowBox[{"where", "\[IndentingNewLine]", "1"}], " ", "<=", " ", "i", " ",
+       "<=", " ", "NumObj"}], ",", "\[IndentingNewLine]", "\t", 
      RowBox[{
      "ma", " ", "is", " ", "a", " ", "matrix", " ", "of", " ", "size", " ", 
       RowBox[{"obj2", "[", 
        RowBox[{"[", "i", "]"}], "]"}], " ", "x", " ", 
-      RowBox[{
-       RowBox[{"obj1", "[", 
-        RowBox[{"[", "i", "]"}], "]"}], "."}]}]}], " ", "*)"}], 
-   "\[IndentingNewLine]", 
+      RowBox[{"obj1", "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CreateMor", "[", 
@@ -304,7 +373,7 @@ Cell[BoxData[
         RowBox[{"[", "2", "]"}], "]"}], ",", 
        RowBox[{"mor", "[", 
         RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"MatrixCokernel", "[", "ma_", "]"}], ":=", " ", 
@@ -435,7 +504,8 @@ Cell[BoxData[
           RowBox[{"coker", ",", 
            RowBox[{"mor", "[", 
             RowBox[{"[", "3", "]"}], "]"}], ",", "cokerobj"}], "}"}], "]"}], 
-        ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+        ";"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
@@ -709,7 +779,7 @@ Cell[BoxData[
             " ", "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]",
           "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "True", "]"}], ";"}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{"Given", " ", 
@@ -772,7 +842,7 @@ Cell[BoxData[
          RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
        RowBox[{"mor1", "[", 
         RowBox[{"[", "3", "]"}], "]"}]}], "}"}]}], ";"}], 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
      RowBox[{
@@ -874,15 +944,18 @@ Cell[BoxData[
    3.7503762054693108`*^9}, {3.750376656165511*^9, 3.750376695752184*^9}, {
    3.750376796324421*^9, 3.7503768228499937`*^9}, {3.750377155056856*^9, 
    3.750377276811536*^9}, {3.75037734617561*^9, 3.7503775110387793`*^9}, {
-   3.750377646321506*^9, 
-   3.750377742261011*^9}},ExpressionUUID->"f5986538-edd4-401d-a1ab-\
+   3.750377646321506*^9, 3.750377742261011*^9}, {3.9109179337076483`*^9, 
+   3.9109179603035116`*^9}, {3.9109179941848946`*^9, 
+   3.9109180959396343`*^9}, {3.910918128848476*^9, 3.910918155440975*^9}, {
+   3.910918191782626*^9, 3.9109183304520683`*^9}, {3.910918371979278*^9, 
+   3.910918389029839*^9}},ExpressionUUID->"f5986538-edd4-401d-a1ab-\
 105ffff7f1b0"]
 },
-WindowSize->{1280, 810},
-WindowMargins->{{Automatic, 30}, {Automatic, 0}},
-FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
-10, 2017)",
-StyleDefinitions->"Default.nb"
+WindowSize->{1117.5, 619},
+WindowMargins->{{Automatic, 74}, {39, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f6499572-aac7-43c9-a209-f6b455ac2416"
 ]
 (* End of Notebook Content *)
 
@@ -895,8 +968,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 575, 16, 94, "Input",ExpressionUUID->"bee72afb-a107-4432-9a64-c086f3c6cf7f"],
-Cell[1136, 38, 34248, 840, 2698, "Input",ExpressionUUID->"f5986538-edd4-401d-a1ab-105ffff7f1b0"]
+Cell[558, 20, 1059, 24, 143, "Input",ExpressionUUID->"bee72afb-a107-4432-9a64-c086f3c6cf7f"],
+Cell[1620, 46, 37024, 905, 2769, "Input",ExpressionUUID->"f5986538-edd4-401d-a1ab-105ffff7f1b0"]
 }
 ]
 *)

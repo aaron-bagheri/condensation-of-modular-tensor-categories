@@ -10,21 +10,25 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     52678,       1239]
-NotebookOptionsPosition[     52193,       1224]
-NotebookOutlinePosition[     52536,       1239]
-CellTagsIndexPosition[     52493,       1236]
+NotebookDataLength[     52894,       1244]
+NotebookOptionsPosition[     52353,       1228]
+NotebookOutlinePosition[     52750,       1244]
+CellTagsIndexPosition[     52707,       1241]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[""], "Input",
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"written", " ", "by", " ", "Shawn", " ", "Cui"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->{{3.737799346005049*^9, 3.7377993586047335`*^9}, 
    3.737799856054898*^9, {3.737803130273*^9, 3.737803762280687*^9}, {
    3.7378038113569503`*^9, 3.737803880142481*^9}, {3.7378044402346735`*^9, 
    3.737804449100312*^9}, {3.7378478085836287`*^9, 3.7378479218475075`*^9}, {
-   3.738017670822903*^9, 
-   3.7380176754814434`*^9}},ExpressionUUID->"8fdff88d-66f1-4471-9a6d-\
+   3.738017670822903*^9, 3.7380176754814434`*^9}, {3.9109172089316454`*^9, 
+   3.910917217005991*^9}},ExpressionUUID->"8fdff88d-66f1-4471-9a6d-\
 a8c178e41ef3"],
 
 Cell[BoxData[{
@@ -44,7 +48,7 @@ Cell[BoxData[{
 b8ed27189296"],
 
 Cell[BoxData[
- RowBox[{"\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"(*", 
    RowBox[{
     RowBox[{
@@ -221,12 +225,12 @@ Cell[BoxData[
             "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "equ", "]"}], ";"}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Create", " ", "the", " ", "equations", " ", "an", " ", "algebra", " ", 
      "needs", " ", "to", " ", 
-     RowBox[{"satisfy", "."}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"satisfy", "."}]}], "*)"}], "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"AlgebraEqu", "[", "objA_", "]"}], ":=", 
@@ -1043,7 +1047,7 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"AlgebraIsoEqu", "[", 
       RowBox[{"Alg1_", ",", " ", "Alg2_", ",", " ", 
-       RowBox[{"varname_:", "c"}]}], "]"}], ":=", " ", 
+       RowBox[{"varname_", ":", "c"}]}], "]"}], ":=", " ", 
      RowBox[{"Module", "[", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"{", 
@@ -1218,14 +1222,15 @@ Cell[BoxData[
    3.8995968227898817`*^9, 3.899596830046296*^9}, {3.8995968973061438`*^9, 
    3.8995969491601095`*^9}, {3.8995969799548707`*^9, 
    3.8995970027281733`*^9}, {3.899597039249262*^9, 3.8995970880710545`*^9}, {
-   3.8995971425281696`*^9, 3.899597167695609*^9}},
- CellLabel->
-  "In[767]:=",ExpressionUUID->"dde64163-55f4-449a-a8a3-7c449fb35eb9"]
+   3.8995971425281696`*^9, 3.899597167695609*^9}, 
+   3.910917226695265*^9},ExpressionUUID->"dde64163-55f4-449a-a8a3-\
+7c449fb35eb9"]
 },
-WindowSize->{1280, 810},
-WindowMargins->{{54, Automatic}, {Automatic, 19}},
-FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
+WindowSize->{1269, 721},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"20d9ab35-46df-4f6b-8f54-d0f34911fb98"
 ]
 (* End of Notebook Content *)
 
@@ -1238,9 +1243,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 430, 7, 28, "Input",ExpressionUUID->"8fdff88d-66f1-4471-9a6d-a8c178e41ef3"],
-Cell[991, 29, 640, 14, 124, "Input",ExpressionUUID->"b27bb47b-9df0-4c88-85a4-b8ed27189296"],
-Cell[1634, 45, 50555, 1177, 4038, "Input",ExpressionUUID->"dde64163-55f4-449a-a8a3-7c449fb35eb9"]
+Cell[558, 20, 609, 11, 48, "Input",ExpressionUUID->"8fdff88d-66f1-4471-9a6d-a8c178e41ef3"],
+Cell[1170, 33, 640, 14, 124, "Input",ExpressionUUID->"b27bb47b-9df0-4c88-85a4-b8ed27189296"],
+Cell[1813, 49, 50536, 1177, 4005, "Input",ExpressionUUID->"dde64163-55f4-449a-a8a3-7c449fb35eb9"]
 }
 ]
 *)

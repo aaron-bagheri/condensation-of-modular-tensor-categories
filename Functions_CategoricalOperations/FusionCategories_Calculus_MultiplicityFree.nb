@@ -10,34 +10,83 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     72976,       1632]
-NotebookOptionsPosition[     72582,       1618]
-NotebookOutlinePosition[     72926,       1633]
-CellTagsIndexPosition[     72883,       1630]
+NotebookDataLength[     80474,       1812]
+NotebookOptionsPosition[     80021,       1797]
+NotebookOutlinePosition[     80422,       1813]
+CellTagsIndexPosition[     80379,       1810]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"READ", " ", "ME"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
+  RowBox[{"(*", " ", 
+   RowBox[{"written", " ", "by", " ", "Shawn", " ", "Cui"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
    RowBox[{
-    RowBox[{"Requires", " ", "NumObj"}], ",", " ", "FusionMatrix", ",", " ", 
-    "FMatrixElem", ",", " ", "RMatrixElem"}], "*)"}]}]], "Input",
+   "defines", " ", "functions", " ", "for", " ", "the", " ", "tensor", " ", 
+    "product", " ", "and", " ", "associator", " ", 
+    RowBox[{"(", 
+     RowBox[{"of", " ", "a", " ", "fusion", " ", "category"}], ")"}], 
+    "\[IndentingNewLine]", "\t", "and", " ", "the", " ", "braiding", " ", 
+    RowBox[{"(", 
+     RowBox[{"of", " ", "a", " ", "braided", " ", "fusion", " ", "category"}],
+      ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "assumes", " ", "the", " ", "category", " ", "is", " ", "multiplicity"}], 
+    "-", "free"}], " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Requirements", ":", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"-", " ", "global"}], " ", "variable", " ", "NumObj"}]}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{"the", " ", "number", " ", "of", " ", "simple", " ", "objects"}],
+      "\[IndentingNewLine]", "-", " ", 
+     RowBox[{"global", " ", "variable", " ", "FusionMatrix"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "the", " ", "matrix", " ", "of", " ", "fusion", " ", "coefficients", " ", 
+      RowBox[{"N", "^", 
+       RowBox[{"{", "ij", "}"}]}], "_k"}], "\[IndentingNewLine]", "-", " ", 
+     RowBox[{"global", " ", "variable", " ", "FMatrixElem"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"the", " ", "array", " ", "of", " ", "F"}], "-", 
+     RowBox[{"symbols", " ", 
+      RowBox[{"F", "^", 
+       RowBox[{"{", "ijk", "}"}]}], "_", 
+      RowBox[{"{", "lmn", "}"}]}], "\[IndentingNewLine]", "-", " ", 
+     RowBox[{"global", " ", "variable", " ", "RMatrixElem"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"the", " ", "array", " ", "of", " ", "R"}], "-", 
+     RowBox[{"symbols", " ", 
+      RowBox[{"R", "^", 
+       RowBox[{"{", "ij", "}"}]}], "_", 
+      RowBox[{"{", "k", "}"}]}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->{{3.737690208232026*^9, 3.7376902849585733`*^9}, {
   3.7377953058890467`*^9, 3.7377953065605836`*^9}, {3.7378479475626926`*^9, 
-  3.7378479533804197`*^9}},ExpressionUUID->"a70d4db6-ce6e-4307-aa1d-\
+  3.7378479533804197`*^9}, {3.910917712261963*^9, 3.9109177271236677`*^9}, {
+  3.910918708441662*^9, 3.9109187747007704`*^9}, {3.910918814633644*^9, 
+  3.9109189802422695`*^9}, {3.9109190276318035`*^9, 
+  3.9109190958981447`*^9}},ExpressionUUID->"a70d4db6-ce6e-4307-aa1d-\
 0c60589e29cf"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(*", 
+  RowBox[{"(*", " ", 
    RowBox[{
-   "Takes", " ", "the", " ", "tensor", " ", "product", " ", "of", " ", "two", 
-    " ", 
-    RowBox[{"objects", "."}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Output", ":", " ", 
+    RowBox[{"the", " ", "tensor", " ", "product", " ", "object", " ", 
+     RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{
@@ -87,7 +136,7 @@ Cell[BoxData[
             "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
         "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "objC", "]"}], ";"}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"MatrixTensor", "[", 
@@ -139,7 +188,7 @@ Cell[BoxData[
           RowBox[{"Length", "[", 
            RowBox[{"na", "[", 
             RowBox[{"[", "1", "]"}], "]"}], "]"}]}]}], "}"}]}], "]"}]}], 
-    ";"}], "\n", 
+    ";"}], "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"MatrixDirectSum", "[", 
@@ -192,10 +241,15 @@ Cell[BoxData[
            RowBox[{"na", "[", 
             RowBox[{"[", "1", "]"}], "]"}], "]"}]}]}], "}"}]}], "]"}]}], 
     ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
     RowBox[{
-    "Takes", " ", "the", " ", "tensor", " ", "product", " ", "of", " ", "two",
-      " ", "morphisms"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Input", ":", " ", "mor1"}], ",", " ", "mor2"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Output", ":", " ", 
+     RowBox[{"the", " ", "tensor", " ", "product", " ", "morphism", " ", 
+      RowBox[{"mor1", " ", "\\", "otimes"}], " ", "mor2"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"MorTensor", "[", 
@@ -824,23 +878,31 @@ Cell[BoxData[
         RowBox[{"Return", "[", "righttreeindex", "]"}], ";"}]}], 
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
     RowBox[{
-    "Returns", " ", "the", " ", "associator", " ", "isomorphism", " ", "from",
-      " ", 
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB", ",", " ", 
+     "objC"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{"the", " ", "associator", " ", "isomorphism", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}], ")"}], " ", 
+        "\\", "otimes"}], " ", "objC"}]}], " ", "->", " ", 
      RowBox[{
+      RowBox[{"objA", " ", "\\", "otimes"}], " ", 
       RowBox[{"(", 
        RowBox[{
-        RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}], ")"}], " ", 
-      "\\", "otimes"}], " ", "objC", " ", "to", " ", 
-     RowBox[{"objA", " ", "\\", "otimes"}], " ", 
+        RowBox[{"objB", " ", "\\", "otimes"}], " ", "objC"}], ")"}]}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
      RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{"objB", " ", "\\", "otimes"}], " ", "objC"}], ")"}], 
-      "\[IndentingNewLine]", ".", " ", "Assume"}], " ", "the", " ", 
-     "category", " ", "is", " ", "MULTIPLICITY", " ", 
-     RowBox[{"FREE", "."}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+      "assume", " ", "the", " ", "category", " ", "is", " ", "multiplicity"}],
+       "-", "free"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"Associator", "[", 
@@ -944,15 +1006,47 @@ Cell[BoxData[
          "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "asso", "]"}], ";"}]}], "\[IndentingNewLine]", 
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
     RowBox[{
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB", ",", " ", 
+     "objC"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "the", " ", "inverse", " ", "associator", " ", "isomorphism", " ", 
+       RowBox[{"objA", " ", "\\", "otimes"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"objB", " ", "\\", "otimes"}], " ", "objC"}], ")"}]}]}], " ",
+      "->", " ", 
      RowBox[{
-     "This", " ", "function", " ", "is", " ", "not", " ", "really", " ", 
-      "necessary"}], ";", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}], ")"}], " ", 
+       "\\", "otimes"}], " ", "objC"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
      RowBox[{
-     "it", " ", "is", " ", "the", " ", "inverse", " ", "of", " ", "the", " ", 
-      RowBox[{"Associator", ".", " ", "Assume"}], " ", "FMatrices", " ", 
-      "are", " ", "unitary"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+      "assume", " ", "the", " ", "category", " ", "is", " ", "multiplicity"}],
+       "-", "free"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
+     RowBox[{
+      RowBox[{"assume", " ", "F"}], "-", 
+      RowBox[{
+      "matrices", " ", "are", " ", "unitary", " ", "so", " ", "inverse", " ", 
+       "is", " ", "conjugate", " ", "transpose"}]}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Note", ":", " ", 
+      RowBox[{"not", " ", "a", " ", "necessary", " ", "function"}]}], ";", 
+     " ", 
+     RowBox[{"the", " ", "inverse", " ", "of", " ", "Associator"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"InvAssociator", "[", 
@@ -1058,10 +1152,19 @@ Cell[BoxData[
          "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "asso", "]"}], ";"}]}], "\[IndentingNewLine]", 
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
     RowBox[{
-    "Verify", " ", "Pentagon", " ", "Equation", " ", "for", " ", "specific", 
-     " ", "objects"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB", ",", " ", "objC", 
+     ",", " ", "objD"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "True", " ", "if", " ", "the", " ", "pentagon", " ", "equation", " ", 
+       "holds", " ", "for", " ", "the", " ", "four", " ", "given", " ", 
+       "objects"}]}], ",", "\[IndentingNewLine]", "\t\t\t", 
+     RowBox[{"False", " ", "otherwise"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CheckPentagon", "[", 
@@ -1108,10 +1211,19 @@ Cell[BoxData[
           RowBox[{"t1", ",", "t2"}], "]"}], "]"}], ";"}]}], 
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
-   RowBox[{"(*", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Input", ":", " ", "none"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
     RowBox[{
-    "Verify", " ", "Pentagon", " ", "Equation", " ", "for", " ", "all", " ", 
-     "simple", " ", "objects"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "True", " ", "if", " ", "the", " ", "pentagon", " ", "equation", " ", 
+       "holds", " ", "for", " ", "all", " ", "simple", " ", "objects"}]}], 
+     ",", "\[IndentingNewLine]", "\t\t\t", 
+     RowBox[{
+      RowBox[{"False", " ", "otherwise"}], ";", " ", 
+      RowBox[{"prints", " ", "the", " ", "first", " ", "failure"}]}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CheckPentagon", "[", "]"}], ":=", " ", 
@@ -1194,12 +1306,24 @@ Cell[BoxData[
         "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "True", "]"}], ";"}]}], "\[IndentingNewLine]", 
       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Assume", " ", "multiplicity", " ", 
-     RowBox[{"free", ".", " ", "Braiding"}], " ", "from", " ", 
-     RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB", " ", "to", " ", 
-     RowBox[{"objB", " ", "\\", "otimes"}], " ", "objA"}], "*)"}], 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{"the", " ", "braiding", " ", "isomorphism", " ", 
+       RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}]}], "->", " ", 
+     RowBox[{
+      RowBox[{"objB", " ", "\\", "otimes"}], " ", "objA"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
+     RowBox[{
+      RowBox[{
+      "assume", " ", "the", " ", "category", " ", "is", " ", "multiplicity"}],
+       "-", "free"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"Braiding", "[", 
@@ -1272,13 +1396,24 @@ Cell[BoxData[
          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "braid", "]"}], ";"}]}], "\[IndentingNewLine]",
        "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"The", " ", "inverse", " ", "to", " ", 
-     RowBox[{"Braiding", ".", " ", "NOTE"}], " ", "that", " ", 
-     RowBox[{"it", "'"}], "s", " ", "a", " ", "morphism", " ", "from", " ", 
-     RowBox[{"objB", " ", "\\", "otimes"}], " ", "objA", " ", "to", " ", 
-     RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}], "*)"}], 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{"the", " ", "inverse", " ", "braiding", " ", "isomorphism", " ", 
+       RowBox[{"objB", " ", "\\", "otimes"}], " ", "objA"}]}], " ", "->", " ", 
+     RowBox[{
+      RowBox[{"objA", " ", "\\", "otimes"}], " ", "objB"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Note", ":", " ", 
+     RowBox[{
+      RowBox[{
+      "assume", " ", "the", " ", "category", " ", "is", " ", "multiplicity"}],
+       "-", "free"}]}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"InvBraiding", "[", 
@@ -1353,48 +1488,73 @@ Cell[BoxData[
             "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
          "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"Return", "[", "braid", "]"}], ";"}]}], "\[IndentingNewLine]",
-       "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
+       "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
     RowBox[{
-     RowBox[{"CheckHexagon1", "[", 
-      RowBox[{"objA_", ",", "objB_", ",", "objC_"}], "]"}], ":=", " ", 
-     RowBox[{"Module", "[", "\[IndentingNewLine]", 
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB", ",", " ", 
+     "objC"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
       RowBox[{
-       RowBox[{"{", 
-        RowBox[{"t1", ",", "t2"}], "}"}], ",", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"t1", " ", "=", " ", 
-         RowBox[{"MorCompose", "[", 
-          RowBox[{
-           RowBox[{"Associator", "[", 
-            RowBox[{"objB", ",", "objC", ",", "objA"}], "]"}], ",", " ", 
-           RowBox[{"Braiding", "[", 
-            RowBox[{"objA", ",", 
-             RowBox[{"ObjTensor", "[", 
-              RowBox[{"objB", ",", "objC"}], "]"}]}], "]"}], ",", " ", 
-           RowBox[{"Associator", "[", 
-            RowBox[{"objA", ",", "objB", ",", "objC"}], "]"}]}], "]"}]}], ";",
-         "\[IndentingNewLine]", 
-        RowBox[{"t2", " ", "=", " ", 
-         RowBox[{"MorCompose", "[", 
-          RowBox[{
-           RowBox[{"MorTensor", "[", 
-            RowBox[{
-             RowBox[{"IdentityMor", "[", "objB", "]"}], ",", 
-             RowBox[{"Braiding", "[", 
-              RowBox[{"objA", ",", "objC"}], "]"}]}], "]"}], ",", 
-           RowBox[{"Associator", "[", 
-            RowBox[{"objB", ",", "objA", ",", "objC"}], "]"}], ",", " ", 
-           RowBox[{"MorTensor", "[", 
-            RowBox[{
-             RowBox[{"Braiding", "[", 
-              RowBox[{"objA", ",", "objB"}], "]"}], ",", 
-             RowBox[{"IdentityMor", "[", "objC", "]"}]}], "]"}]}], "]"}]}], 
-        ";", "\[IndentingNewLine]", 
-        RowBox[{"Return", "[", 
-         RowBox[{"MorEqualQ", "[", 
-          RowBox[{"t1", ",", "t2"}], "]"}], "]"}], ";"}]}], 
-      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+      "True", " ", "if", " ", "the", " ", "first", " ", "hexagon", " ", 
+       "equation", " ", "holds", " ", "for", " ", "the", " ", "given", " ", 
+       "objects"}]}], ",", "\[IndentingNewLine]", "\t\t\t", 
+     RowBox[{"False", " ", "otherwise"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"CheckHexagon1", "[", 
+     RowBox[{"objA_", ",", "objB_", ",", "objC_"}], "]"}], ":=", " ", 
+    RowBox[{"Module", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"t1", ",", "t2"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"t1", " ", "=", " ", 
+        RowBox[{"MorCompose", "[", 
+         RowBox[{
+          RowBox[{"Associator", "[", 
+           RowBox[{"objB", ",", "objC", ",", "objA"}], "]"}], ",", " ", 
+          RowBox[{"Braiding", "[", 
+           RowBox[{"objA", ",", 
+            RowBox[{"ObjTensor", "[", 
+             RowBox[{"objB", ",", "objC"}], "]"}]}], "]"}], ",", " ", 
+          RowBox[{"Associator", "[", 
+           RowBox[{"objA", ",", "objB", ",", "objC"}], "]"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"t2", " ", "=", " ", 
+        RowBox[{"MorCompose", "[", 
+         RowBox[{
+          RowBox[{"MorTensor", "[", 
+           RowBox[{
+            RowBox[{"IdentityMor", "[", "objB", "]"}], ",", 
+            RowBox[{"Braiding", "[", 
+             RowBox[{"objA", ",", "objC"}], "]"}]}], "]"}], ",", 
+          RowBox[{"Associator", "[", 
+           RowBox[{"objB", ",", "objA", ",", "objC"}], "]"}], ",", " ", 
+          RowBox[{"MorTensor", "[", 
+           RowBox[{
+            RowBox[{"Braiding", "[", 
+             RowBox[{"objA", ",", "objB"}], "]"}], ",", 
+            RowBox[{"IdentityMor", "[", "objC", "]"}]}], "]"}]}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"MorEqualQ", "[", 
+         RowBox[{"t1", ",", "t2"}], "]"}], "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Input", ":", " ", "objA"}], ",", " ", "objB", ",", " ", 
+     "objC"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "True", " ", "if", " ", "the", " ", "second", " ", "hexagon", " ", 
+       "equation", " ", "holds", " ", "for", " ", "the", " ", "given", " ", 
+       "objects"}]}], ",", "\[IndentingNewLine]", "\t\t\t", 
+     RowBox[{"False", " ", "otherwise"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CheckHexagon2", "[", 
@@ -1437,6 +1597,19 @@ Cell[BoxData[
          RowBox[{"MorEqualQ", "[", 
           RowBox[{"t1", ",", "t2"}], "]"}], "]"}], ";"}]}], 
       "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Input", ":", " ", "none"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Output", ":", " ", 
+      RowBox[{
+      "True", " ", "if", " ", "the", " ", "hexagon", " ", "equations", " ", 
+       "hold", " ", "for", " ", "all", " ", "simple", " ", "objects"}]}], ",",
+      "\[IndentingNewLine]", "\t\t\t", 
+     RowBox[{
+      RowBox[{"False", " ", "otherwise"}], ";", " ", 
+      RowBox[{"prints", " ", "the", " ", "first", " ", "failure"}]}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"CheckHexagon", "[", "]"}], ":=", " ", 
@@ -1612,14 +1785,21 @@ Cell[BoxData[
    3.7378425518551416`*^9, 3.7378425527145433`*^9}, {3.7378425872319126`*^9, 
    3.7378425943449125`*^9}, {3.737846972819707*^9, 3.737846978855528*^9}, 
    3.7378470121229377`*^9, 3.737973470086029*^9, {3.8081813836109705`*^9, 
-   3.808181387114171*^9}, 
-   3.845342265114179*^9},ExpressionUUID->"b60a93a0-fe4b-4f05-8afe-\
+   3.808181387114171*^9}, 3.845342265114179*^9, {3.910919562387575*^9, 
+   3.9109195761124573`*^9}, {3.910919757324604*^9, 3.910919790052066*^9}, {
+   3.9109198329680786`*^9, 3.910919838096051*^9}, {3.9109199037641773`*^9, 
+   3.910919950932683*^9}, {3.910920162434804*^9, 3.9109201804840117`*^9}, {
+   3.910920211121668*^9, 3.9109202359751644`*^9}, 3.910920442446904*^9, 
+   3.9109204985357265`*^9, {3.9109205498559885`*^9, 3.910920584483802*^9}, {
+   3.910920635763875*^9, 
+   3.9109206359417524`*^9}},ExpressionUUID->"b60a93a0-fe4b-4f05-8afe-\
 1ae0d95bab0f"]
 },
-WindowSize->{1610, 859},
-WindowMargins->{{Automatic, 115}, {Automatic, 24}},
-FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
+WindowSize->{1138, 520},
+WindowMargins->{{Automatic, 5.5}, {3.5, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5a56abe2-4f0d-4477-8dbc-f1f86973cc5f"
 ]
 (* End of Notebook Content *)
 
@@ -1632,8 +1812,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 508, 11, 48, "Input",ExpressionUUID->"a70d4db6-ce6e-4307-aa1d-0c60589e29cf"],
-Cell[1069, 33, 71509, 1583, 5102, "Input",ExpressionUUID->"b60a93a0-fe4b-4f05-8afe-1ae0d95bab0f"]
+Cell[558, 20, 2546, 56, 238, "Input",ExpressionUUID->"a70d4db6-ce6e-4307-aa1d-0c60589e29cf"],
+Cell[3107, 78, 76910, 1717, 5775, "Input",ExpressionUUID->"b60a93a0-fe4b-4f05-8afe-1ae0d95bab0f"]
 }
 ]
 *)
